@@ -5,7 +5,9 @@
 
 @font-face {
   font-family: "GeneralSans";
-  src: url("../assets/fonts/GeneralSans-Variable.ttf");
+  src: url("../assets/fonts/GeneralSans-Variable.ttf") format('truetype');
+  font-weight: 400 500 600 700 800 900; /* Specify the font weights available */
+  font-stretch: 75% 100%; /* Specify the font widths available */
 }
 
 :root {
@@ -15,7 +17,6 @@
 
   --clr-grey-light:rgb(233, 233, 233);
   --clr-grey-base:rgb(119, 118, 118);
-
 
   --color-bg1: rgb(108, 0, 162);
   --color-bg2: rgb(0, 17, 82);
@@ -40,16 +41,11 @@
 }
 
 * {
-  font-family: "GeneralSans", serif;
+  font-family: "GeneralSans", Arial, sans-serif;
   -webkit-font-smoothing: antialiased; /* For Chrome, Safari, and newer versions of Opera */
   -moz-osx-font-smoothing: grayscale; /* For Firefox on macOS */
   text-rendering: optimizeLegibility; /* Improved kerning and ligatures */
 }
-
-/*
-  background-image: radial-gradient(var(--clr-grey-light) 2px, var(--clr-base) 2px);
-  background-size: 20px 20px;
-*/
 
 body {
   background-color: var(--clr-base);
