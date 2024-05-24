@@ -41,7 +41,9 @@
 
 * {
   font-family: "GeneralSans", serif;
-  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased; /* For Chrome, Safari, and newer versions of Opera */
+  -moz-osx-font-smoothing: grayscale; /* For Firefox on macOS */
+  text-rendering: optimizeLegibility; /* Improved kerning and ligatures */
 }
 
 /*
