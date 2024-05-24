@@ -2,14 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
+/*../assets/fonts/GeneralSans-Variable.ttf*/
 
 @font-face {
   font-family: "GeneralSans";
-  src: url("../assets/fonts/GeneralSans-Variable.ttf") format('truetype');
-  font-weight: 400 500 600 700 800 900; /* Specify the font weights available */
+  src: url("../assets/fonts/GeneralSans-Regular.otf") format('truetype');
+  font-weight: 400; /* Specify the font weights available */
   font-stretch: 75% 100%; /* Specify the font widths available */
   font-display:swap;
 }
+
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("../assets/fonts/GeneralSans-Medium.otf") format('truetype');
+  font-weight: 500; /* Specify the font weights available */
+  font-stretch: 75% 100%; /* Specify the font widths available */
+  font-display:swap;
+}
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("../assets/fonts/GeneralSans-Semibold.otf") format('truetype');
+  font-weight: 600; /* Specify the font weights available */
+  font-stretch: 75% 100%; /* Specify the font widths available */
+  font-display:swap;
+}
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("../assets/fonts/GeneralSans-Bold.otf") format('truetype');
+  font-weight: 700; /* Specify the font weights available */
+  font-stretch: 75% 100%; /* Specify the font widths available */
+  font-display:swap;
+}
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("../assets/fonts/GeneralSans-Bold.otf") format('truetype');
+  font-weight: 800; /* Specify the font weights available */
+  font-stretch: 75% 100%; /* Specify the font widths available */
+  font-display:swap;
+}
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("../assets/fonts/GeneralSans-Bold.otf") format('truetype');
+  font-weight: 900; /* Specify the font weights available */
+  font-stretch: 75% 100%; /* Specify the font widths available */
+  font-display:swap;
+}
+
+
 
 :root {
   --clr-base: #fffefe;
