@@ -10,9 +10,6 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Sprica Labs | Web & UI/UX Design & Development",
   description: "Sprica turns ideas into websites, apps, and digital products for businesses, personal brands, and you.",
-  openGraph: {
-    images: '/sprica-labs-meta-img.png'
-  }
 };
 
 export default function RootLayout({
@@ -22,6 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta property="og:image" content="/sprica-labs-meta-img.png" />
+      </head>
       <body className={inter.className}>
         <Navbar/>
         <main className="">
