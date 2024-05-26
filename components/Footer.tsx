@@ -8,7 +8,7 @@ export default function Footer() {
             <section className='flex flex-col lg:flex-row justify-between'>
                 <Logo/>
                 <div className='font-semibold lg:text-lg'>
-                    <Link href={cal30MinLink}>Work with us</Link>
+                    <Link href={cal30MinLink}>Hire us</Link>
                 </div>
             </section>
             <div>

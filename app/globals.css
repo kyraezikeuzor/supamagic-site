@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/*../assets/fonts/GeneralSans-Variable.ttf*/
 
 @font-face {
   font-family: "GeneralSans";
@@ -53,12 +52,10 @@
   font-display:swap;
 }
 
-
-
 :root {
-  --clr-base: #fffefe;
+  --clr-base: #fbfbfb;
   --clr-base-accent:rgb(243, 243, 243);
-  --clr-base-text: #262626;
+  --clr-base-text: #2e2e2e;
 
   --clr-grey-light:rgb(233, 233, 233);
   --clr-grey-base:rgb(119, 118, 118);
@@ -108,7 +105,6 @@ h1,h2,h3,h4,h5,h6 {
   letter-spacing: -1px;
 }
 
-
 p {
   color: var(--clr-grey-dark);
 }
@@ -126,11 +122,6 @@ input:focus {
   outline:none;
 }
 
-
-iframe::-webkit-scrollbar {
-  width: 0px;
-  height:0px;
-}
 
 @media screen and (min-width: 1024px) {
   h1 {font-size: 3.7rem;}
@@ -155,24 +146,18 @@ iframe::-webkit-scrollbar {
 }
 
 @media screen and (max-width: 786px) {
-  h1 {font-size: 2.1rem;}
-  h2 {font-size: 1.9rem;}
-  h3 {font-size: 1.875rem;}
-  h4 {font-size: 1.5rem;}
-  h5 {font-size: 1.25rem;}
-  h6 {font-size: 1.125rem;}
+  h1 {font-size: 1.8rem;}
+  h2 {font-size: 1rem;}
+  h3 {font-size: .85;}
+  h4 {font-size: .75rem;}
+  h5 {font-size: .6rem;}
+  h6 {font-size: .125rem;}
   p {font-size: 14px}
   button {font-size: 14px;}
 }
 
 
 @media screen and (max-width: 640px) {
-  h1 {font-size: 1.6rem;}
-  h2 {font-size: 1.2rem;}
-  h3 {font-size: 1;}
-  h4 {font-size: .8rem;}
-  h5 {font-size: .75rem;}
-  h6 {font-size: .5rem;}
   p {font-size: 14px}  
   button {font-size: 14px;}
   svg {width: 16px; height:16px;}

@@ -13,19 +13,19 @@ export default function Home() {
 
         <header id='hero h-screen'>
           <AnimationMorphGradient>
-            <div className='z-50 w-full flex flex-col gap-3 m-5 p-5 md:mx-[20vw] lg:p-12 lg:mx-[30vw] lg:my-[20vh] 
-            bg-[--clr-base] rounded-3xl border-2 border-[--clr-base-accent] shadow-sm'>
-              <h1 className=''>Sprica Labs is a UI/UX design firm crafting great user experiences.</h1>
-              <p className='text-base md:text-xl'>
-                Sprica Labs creates websites, apps, and digital products for businesses, personal brands, and you.
+            <section className='z-50 w-full flex flex-col gap-5 m-5 p-8 md:mx-[15vw] lg:p-12 lg:mx-[30vw] lg:my-[20vh] 
+            bg-[--clr-base] rounded-3xl border border-[--clr-base-accent] shadow-lg'>
+              <h1 className='leading-[1.1]'>Sprica Labs is a UI/UX design studio making imaginative interfaces.</h1>
+              <p className='text-base md:text-xl font-medium'>
+                Sprica turns ideas into websites, apps, and digital products for businesses, personal brands, and you.
               </p>
-              <div className='flex flex-row gap-3 sm:gap-5 mt-5'>
+              <div className='flex flex-row gap-3 mt-5'>
                 <Button path={cal30MinLink}>Book a call <Icon inline fillColor='inherit' size='sm' icon='Calendar'/></Button>
                 <NavigateButton targetElementId='work' navigateButtonId='seeWorkButton'>
                   <Button outline>See work <Icon inline fillColor='inherit' size='sm' icon='ArrowDown'/></Button>
                 </NavigateButton>
               </div>
-            </div>
+            </section>
           </AnimationMorphGradient>
         </header>
 
@@ -33,8 +33,8 @@ export default function Home() {
 
         <section id='work' className='flex flex-col gap-20 items-center m-5 lg:mx-[30vw] lg:my-[20vh]'>
           <h2>Explore past projects</h2>
-          <div className=''>
-            <p>Currently uploading content.</p>
+          <div className='font-medium'>
+            <p>Uploading content...</p>
           </div>
         </section>
 

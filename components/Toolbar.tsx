@@ -15,7 +15,7 @@ export default function Navbar() {
     useEffect(() => {
       const handleScroll = () => {
         const heroHeight = document.getElementById('hero')?.offsetHeight || 0;
-        if (window.scrollY > heroHeight) {
+        if (window.scrollY > heroHeight + 100) {
           setIsSticky(true);
         } else {
           setIsSticky(false);
@@ -34,7 +34,7 @@ export default function Navbar() {
             <Logo/>
             
             <div className='flex flex-row gap-2'>
-                <Button>Book me <Icon fillColor='inherit' size='sm' icon='Calendar'/></Button>
+                <Button>Book a call <Icon fillColor='inherit' size='sm' icon='Calendar'/></Button>
             </div>
         </div>
       </nav>
