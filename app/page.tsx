@@ -9,12 +9,12 @@ import {cal30MinLink} from '@/assets/content/links'
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-10">
+    <main className="flex flex-col gap-20">
 
         <header id='hero h-screen'>
           <AnimationMorphGradient>
-            <section className='z-50 w-full flex flex-col gap-5 m-5 p-8 md:mx-[15vw] lg:p-12 lg:mx-[30vw] lg:my-[20vh] 
-            bg-[--clr-base] rounded-3xl border border-[--clr-base-accent] drop-shadow-sm'>
+            <section className='z-50 w-full flex flex-col gap-5 m-5 p-8 md:p-12 md:mx-[15vw] lg:p-12 lg:mx-[25vw] lg:my-[20vh] 2xl:mx-[30vw]
+            bg-[#fcfcfc] rounded-3xl border border-[--clr-base-accent] drop-shadow-sm'>
               <h1 className='leading-[1.1]'>Sprica Labs is a UI/UX design studio making imaginative interfaces.</h1>
               <p className='leading-[1.4] text-lg md:text-xl text-[--clr-grey-base] font-medium'>
                 Sprica turns ideas into websites, apps, and digital products for businesses, personal brands, and you.
@@ -31,10 +31,10 @@ export default function Home() {
 
         <Toolbar/>
 
-        <section id='work' className='flex flex-col gap-20 items-center m-5 lg:mx-[30vw] lg:my-[20vh]'>
+        <section id='work' className='flex flex-col gap-5 items-center m-5 lg:mx-[30vw] '>
           <h2>Explore past projects</h2>
-          <div className='font-medium'>
-            <p>Uploading content...</p>
+          <div>
+            <span className='text-lg'>Uploading content...</span>
           </div>
         </section>
 

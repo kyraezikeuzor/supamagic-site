@@ -1,5 +1,5 @@
 .button {
-    padding:.6rem 1.4rem;
+    padding:.6rem 1.6rem;
     background-color: var(--clr-base-text);
     border-radius: 24px;
     color: var(--clr-base);
@@ -14,10 +14,10 @@
 }
 
 .outline {
-    fill: var(--clr-grey-base);
+    fill: var(--clr-grey-dark);
     background-color: transparent;
-    border:1px solid var(--clr-grey-base);
-    color: var(--clr-grey-base);
+    border:2px solid var(--clr-grey-light);
+    color: var(--clr-grey-dark);
     box-shadow: none;
 }
 

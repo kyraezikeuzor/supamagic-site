@@ -29,8 +29,8 @@ const Icon = ({icon, onClick, className, size, fillColor, inline, button}: IconP
         onClick={onClick}
         className={`${className} m-auto max-w-full ${button && 'p-[4px] rounded-full flex flex-col items-center hover:cursor-pointer hover:bg-[--clr-base-accent]  box-content'}`}  
         style={{fill:fillColor, display:`${inline == true ? 'inline' : ''}`}}
-        width={size === 'sm' ? '16' : size === 'lg' ? '38' : '24' } 
-        height={size === 'sm' ? '16' : size === 'lg' ? '38' : '24' }  
+        width={size === 'sm' ? '18' : size === 'lg' ? '38' : '24' } 
+        height={size === 'sm' ? '18' : size === 'lg' ? '38' : '24' }  
         xmlns="http://www.w3.org/2000/svg" 
         viewBox={`0 0 24 24`}
         fill="none"

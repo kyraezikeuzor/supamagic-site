@@ -9,12 +9,6 @@ type ButtonProps = {
     variant?: Boolean
 }
 
-/*
-{`${outline && styles.outline}`}
-
-
- */
-
 const Button = ({children, path, outline, variant}:ButtonProps) => {
     return (
         <>

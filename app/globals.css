@@ -53,12 +53,13 @@
 }
 
 :root {
-  --clr-base: #fafafa;
+  --clr-base: #fffefe;
   --clr-base-accent:rgb(243, 243, 243);
   --clr-base-text: #2e2e2e;
 
-  --clr-grey-light:rgb(233, 233, 233);
+  --clr-grey-light:rgb(223, 218, 218);
   --clr-grey-base:rgb(119, 118, 118);
+  --clr-grey-dark:rgb(53, 53, 53);
 
   --color-bg1: rgb(108, 0, 162);
   --color-bg2: rgb(0, 17, 82);
@@ -101,8 +102,6 @@ svg {
 h1,h2,h3,h4,h5,h6 {
   font-weight:600;
   font-variation-settings: "wght" 600;
-  line-height:1;
-  letter-spacing: px;
 }
 
 p {
@@ -146,9 +145,9 @@ input:focus {
 }
 
 @media screen and (max-width: 786px) {
-  h1 {font-size: 1.8rem;}
-  h2 {font-size: 1.65rem;}
-  h3 {font-size: 1.45;}
+  h1 {font-size: 1.65rem;}
+  h2 {font-size: 1.5rem;}
+  h3 {font-size: 1.35;}
   h4 {font-size: 1.24rem;}
   h5 {font-size: 1rem;}
   h6 {font-size: .85;}
