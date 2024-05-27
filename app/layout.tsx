@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta property="og:image" content="/sprica-labs-meta-img.png" />
+        <meta property="og:image" content="/sprica-labs-meta-img-thin.png" />
       </head>
       <body className={inter.className}>
         <Navbar/>
