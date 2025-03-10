@@ -209,12 +209,12 @@ export default function Home() {
           <AccordionItem value="item-1">
             <AccordionTrigger className="text-lg font-medium">How long does it take to build a website?</AccordionTrigger>
             <AccordionContent className="text-[--clr-grey-base] text-lg">
-              Our basic websites typically take 1-2 weeks to complete. Custom web applications may take 4-8 weeks depending on complexity. We'll provide a detailed timeline during our initial consultation.
+              Our basic websites typically take 1-2 weeks to complete. Custom web applications may take 4-8 weeks depending on complexity. We&apos;ll provide a detailed timeline during our initial consultation.
             </AccordionContent>
           </AccordionItem>
 
           <AccordionItem value="item-2">
-            <AccordionTrigger className="text-lg font-medium">What's included in the $250 package?</AccordionTrigger>
+            <AccordionTrigger className="text-lg font-medium">What&apos;s included in the $250 package?</AccordionTrigger>
             <AccordionContent className="text-[--clr-grey-base] text-lg">
               The $250 package includes a custom-designed, mobile-responsive website with up to 5 pages, SEO optimization, a contact form, and 2 rounds of revisions. This is perfect for small businesses and personal websites.
             </AccordionContent>
@@ -223,7 +223,7 @@ export default function Home() {
           <AccordionItem value="item-3">
             <AccordionTrigger className="text-lg font-medium">Do you offer hosting and maintenance?</AccordionTrigger>
             <AccordionContent className="text-[--clr-grey-base] text-lg">
-              Yes! We can help you set up hosting and provide ongoing maintenance services. We'll discuss these options during our consultation to find the best solution for your needs.
+              Yes! We can help you set up hosting and provide ongoing maintenance services. We&apos;ll discuss these options during our consultation to find the best solution for your needs.
             </AccordionContent>
           </AccordionItem>
 
@@ -246,7 +246,7 @@ export default function Home() {
       <section className="min-h-[70vh] flex flex-col gap-10 items-center justify-center py-32 px-5 md:px-20 lg:px-32">
         <div className="flex flex-col gap-6 items-center text-center max-w-4xl">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold">Ready to transform your online presence?</h2>
-          <p className="text-xl md:text-2xl text-[--clr-grey-base]">Book a free consultation today and let's discuss your project.</p>
+          <p className="text-xl md:text-2xl text-[--clr-grey-base]">Book a free consultation today and let&apos;s discuss your project.</p>
         </div>
         <Button path={cal30MinLink} className="text-lg">
           Schedule Your Call
