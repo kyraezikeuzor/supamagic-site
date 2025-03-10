@@ -1,1 +1,1 @@
-export const cal30MinLink = 'https://cal.com/spricalabs/30min'
+export const cal30MinLink = 'https://cal.com/supamagic/30min'

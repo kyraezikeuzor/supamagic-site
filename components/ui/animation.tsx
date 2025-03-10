@@ -1,6 +1,6 @@
 'use client'
 import React, {useEffect, useRef } from 'react'
-import styles from './AnimationMorphGradient.module.css'
+import styles from './animation.module.css'
 
 export default function AnimationMorphGradient({children}:{children:React.ReactNode}) {
     const goo = useRef<HTMLDivElement>(null);

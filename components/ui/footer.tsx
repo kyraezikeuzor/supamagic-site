@@ -1,7 +1,7 @@
-import Logo from './Logo'
+import Logo from './logo'
 import Link from 'next/link'
 import {cal30MinLink} from '@/assets/content/links'
-import AnimationMeshGradient from '@/components/AnimationMeshGradient'
+import AnimationMeshGradient from '@/components/ui/animation'
 
 export default function Footer() {
     return (
@@ -13,7 +13,7 @@ export default function Footer() {
                 </div>
             </section>
             <div>
-                <span>Sprica Labs 2024</span>
+                <span>© Supamagic Design 2025</span>
             </div>
         </footer>
     )

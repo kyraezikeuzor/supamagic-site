@@ -1,5 +1,5 @@
 import type { Metadata, ResolvingMetadata } from 'next'
-import getProject from '@/assets/utils/helpers'
+import getProject from '@/lib/helpers'
 import Link from 'next/link'
 
 type ProjectPageProps = {

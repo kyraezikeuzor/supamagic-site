@@ -1,6 +1,6 @@
 'use client'
 import React, {useState, useEffect} from 'react'
-import Icon from './Icon'
+import { X } from 'lucide-react'
 
 type ModalProps = {
   children:React.ReactNode;
@@ -46,7 +46,7 @@ export default function Modal({children, modalClassName, toggleElement}:ModalPro
         {isOpen && (
           <div className={`${modalClassName} p-5 border-[1px] border-[--clr-base-accent] bg-[--clr-base] rounded-lg shadow-lg`}>
             <div onClick={handleToggleModal} className='flex flex-col items-center absolute top-2 right-2 bg-[--clr-base-accent] rounded-full p-1 cursor-pointer'>
-                <Icon icon='X' size='sm' className='block fill-[--clr-grey-dark]' />
+                <X className='fill-[--clr-grey-dark] block'/>
             </div>
             <div className="flex flex-col modal-content mt-5">
               {children}
