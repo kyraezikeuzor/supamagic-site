@@ -36,12 +36,12 @@ export default function AnimationMorphGradient({children}:{children:React.ReactN
     <div className='relative w-screen h-[200vh]'>
         <div style={gradientBgStyle('200vh') as CSSProperties}>
             <div style={gradientsContainerStyle('200vh') as CSSProperties}>
-                <div style={g1Style('50%') as CSSProperties}></div>
-                <div style={g2Style('50%') as CSSProperties}></div>
-                <div style={g3Style('50%') as CSSProperties}></div>
-                <div style={g4Style('50%') as CSSProperties}></div>
-                <div style={g5Style('50%') as CSSProperties}></div>
-                <div style={interactiveStyle('50%') as CSSProperties}></div>
+                <div style={g1Style('70%') as CSSProperties}></div>
+                <div style={g2Style('70%') as CSSProperties}></div>
+                <div style={g3Style('70%') as CSSProperties}></div>
+                <div style={g4Style('70%') as CSSProperties}></div>
+                <div style={g5Style('70%') as CSSProperties}></div>
+                <div style={interactiveStyle('70%') as CSSProperties}></div>
             </div>
             <div style={textContainerStyle('200vh') as CSSProperties}>
                 {children}

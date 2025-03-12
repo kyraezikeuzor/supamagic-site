@@ -65,8 +65,6 @@ function gradientBgStyle(height = '200vh') {
     background: 'linear-gradient(40deg, var(--color-bg2))',
     top: 0,
     left: 0,
-    paddingX: "5vw",
-    paddingY: "5vh",
     zIndex: "-999"
   };
 }
