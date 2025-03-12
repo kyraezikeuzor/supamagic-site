@@ -5,7 +5,7 @@ import AnimationMorphGradient from "@/components/ui/animation";
 import { Navigate } from "@/components/ui/navigate";
 import Logo from "@/components/ui/logo";
 import { cal30MinLink } from "@/assets/content/links";
-import { ArrowDown, Calendar, Plane, Star } from 'lucide-react'
+import { ArrowDown, Calendar, Plane, Star, Check, Rocket } from 'lucide-react'
 import {
   Card,
   CardContent,
@@ -28,14 +28,17 @@ import {
 import ProjectCard from '@/components/ui/project-card';
 import { projects } from '@/lib/projects';
 import {ProjectScroll} from '@/components/ui/project-scroll';
+import { Separator } from "@/components/ui/separator";
+import { pricingTiers } from "@/lib/pricing";
+import { processSteps } from "@/lib/process";
 
 export default function Home() {
   return (
-    <main className="flex flex-col">
+    <main className="flex flex-col gap-10">
       
-      <header className="min-h-screen flex items-center justify-center">
+      <header className="max-h-screen flex items-center justify-center">
         <AnimationMorphGradient>
-          <section className="z-50 w-full flex flex-col gap-5 m-5 p-8 md:p-12 md:mx-[15vw] lg:p-12 lg:mx-[25vw] 2xl:mx-[30vw] bg-[--clr-base-accent] rounded-3xl border border-[--clr-base-accent] drop-shadow-sm">
+          <section className="z-50 w-fit max-w-[750px] flex flex-col gap-5 m-5 p-8 md:p-12 md:mx-[15vw] lg:p-12 lg:mx-[25vw] 2xl:mx-[30vw] bg-[--clr-base-accent] rounded-3xl border border-[--clr-base-accent] drop-shadow-sm">
             <div className="flex flex-row items-center justify-start gap-2 rounded-full pl-1 pr-4 py-1 w-full">
               <div className="flex -space-x-3">
                 <Avatar className="border-2 border-[--clr-base-accent] w-8 h-8">
@@ -65,12 +68,12 @@ export default function Home() {
               </div>
             </div>
             <h1 className="leading-[1.1]">
-              We build fast, high performing sites at{" "}<br className="hidden md:block"/> 
+              We build fast, high performing sites at{" "}<br className="hidden"/> 
               <span className="inline-flex align-middle flex flex-row gap-2">
                 <Logo variant="minimal" asLink={false} />Supamagic.
               </span>
             </h1>
-            <p className="leading-[1.4] text-lg md:text-xl text-[--clr-grey-base] font-">
+            <p className="leading-[1.4] text-lg md:text-xl">
               We craft sleek, results-driven sites that turn clicks into customers and help your business grow.
             </p>
             <div className="flex flex-row gap-3 mt-5">
@@ -93,7 +96,7 @@ export default function Home() {
         </AnimationMorphGradient>
       </header>
 
-      <section id="work" className="min-h-screen  flex flex-col gap-5 py-20 px-5 md:px-20 lg:px-32">
+      <section id="work" className="flex flex-col gap-5 py-12 px-5 md:px-20 lg:px-32">
         <div className=" flex flex-col items-center justify-center gap-4">
           <h2>Explore our recent work</h2>
           <p className="text-xl text-[--clr-grey-base]">Check out our latest projects</p>
@@ -101,111 +104,114 @@ export default function Home() {
         <ProjectScroll projects={projects} />
       </section>
 
-      <section className="min-h-screen flex flex-col gap-20 py-20 px-5 md:px-20 lg:px-32">
+      <section id="process" className="flex flex-col gap-20 py-12 px-5 md:px-20 lg:px-32">
         <div className="flex flex-col gap-3 text-center">
           <h2>Your website should do the most marketing for you. But it&apos;s not.</h2>
           <p className="text-xl">You need to turn website views into customers.</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
-          <div className="flex flex-col items-center justify-center text-center gap-5 p-8 bg-[--clr-base-accent] rounded-xl">
-            <div className="flex flex-col items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center">
-                <span className="text-2xl font-bold">1</span>
+        <div className="flex flex-col gap-10 max-w-7xl mx-auto w-full">
+          {/* First row */}
+          <div className="grid grid-cols-1 lg:grid-rows-2 lg:grid-cols-6 gap-10">
+            {processSteps.slice(0, 3).map((step) => (
+              <div 
+                key={step.number} 
+                className="lg:col-span-2 flex flex-col items-center justify-center text-center gap-5 p-8 bg-[--clr-base-accent] rounded-xl"
+              >
+                <div className="flex flex-col items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center">
+                    <span className="text-2xl font-bold">{step.number}</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <h4 className="text-xl md:text-2xl font-medium">{step.title}</h4>
+                    <p className="text-base text-[--clr-grey-base]">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div className="flex flex-col items-center gap-2">
-                <h4 className="text-xl font-semibold">Identify the Problem Areas</h4>
-                <p className="text-base text-[--clr-grey-base]">
-                  We analyze your current site or app to find issues in design, user experience, and functionality.
-                </p>
+            ))}
+            <div className='grid lg:grid-rows-subgrid grid-cols-1 lg:row-start-2 lg:col-start-2 lg:col-span-4 gap-10'>
+            {processSteps.slice(3).map((step) => (
+              <div 
+                key={step.number} 
+                className="lg:col-span-2 lg:row-start-1 flex-1 w-full lg:min-w-[280px] lg:max-w-[350px] flex flex-col items-center justify-center text-center gap-5 p-8 bg-[--clr-base-accent] rounded-xl"
+              >
+                <div className="flex flex-col items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center">
+                    <span className="text-2xl font-bold">{step.number}</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <h4 className="text-xl md:text-2xl font-medium">{step.title}</h4>
+                    <p className="text-base text-[--clr-grey-base]">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
               </div>
+            ))}
             </div>
           </div>
-          <div className="flex flex-col items-center justify-center text-center gap-5 p-8 bg-[--clr-base-accent] rounded-xl">
-            <div className="flex flex-col items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center">
-                <span className="text-2xl font-bold">2</span>
-              </div>
-              <div className="flex flex-col items-center gap-2">
-                <h4 className="text-xl font-semibold">Design & Development</h4>
-                <p className="text-base text-[--clr-grey-base]">
-                  Our team creates a custom solution that addresses your specific needs and goals.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col items-center justify-center text-center gap-5 p-8 bg-[--clr-base-accent] rounded-xl">
-            <div className="flex flex-col items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center">
-                <span className="text-2xl font-bold">3</span>
-              </div>
-              <div className="flex flex-col items-center gap-2">
-                <h4 className="text-xl font-semibold">Launch & Optimize</h4>
-                <p className="text-base text-[--clr-grey-base]">
-                  We deploy your solution and continuously optimize for peak performance.
-                </p>
-              </div>
-            </div>
-          </div>
+
         </div>
       </section>
 
-      <section id="pricing" className="min-h-screen flex flex-col gap-10 py-20 px-5 md:px-20 lg:px-32">
+      <section id="pricing" className="flex flex-col gap-10 py-12 px-5 md:px-20 lg:px-32">
         <div className="flex flex-col gap-5 text-center">
           <h2>Clear pricing, clear results.</h2>
           <p className="text-xl">Simple pricing with Stripe.</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto w-full">
-          <Card className="p-6">
-            <CardHeader>
-              <CardTitle className="text-2xl md:text-3xl">Basic Website</CardTitle>
-              <CardDescription className="text-3xl md:text-4xl font-bold mt-2 text-[--clr-grey-base]">$250</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-4 text-lg text-[--clr-grey-base]">
-                <li>✓ Custom Design</li>
-                <li>✓ Mobile Responsive</li>
-                <li>✓ SEO Optimization</li>
-                <li>✓ Contact Form</li>
-                <li>✓ 2 Revisions</li>
-                <li>✓ 5 Pages</li>
-              </ul>
-            </CardContent>
-            <CardFooter>
-              <Button path={cal30MinLink}>Get Started</Button>
-            </CardFooter>
-          </Card>
-
-          <Card className="relative p-6 bg-[--clr-base-accent] before:absolute before:inset-0 before:p-[2px] before:bg-gradient-to-r before:from-[rgba(var(--color1),0.8)] before:via-[rgba(var(--color3),0.8)] before:to-[rgba(var(--color5),0.8)] before:rounded-xl before:-z-10">
-            <CardHeader>
-              <CardTitle className="text-2xl md:text-3xl">Custom Web App</CardTitle>
-              <CardDescription className="text-3xl md:text-4xl font-bold mt-2 text-[--clr-grey-base]">Custom Quote</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-4 text-lg text-[--clr-grey-base]">
-                <li>✓ Everything in Basic</li>
-                <li>✓ Custom Functionality</li>
-                <li>✓ Database Integration</li>
-                <li>✓ User Authentication</li>
-                <li>✓ API Integration</li>
-                <li>✓ Unlimited Revisions</li>
-              </ul>
-            </CardContent>
-            <CardFooter>
-              <Button path={cal30MinLink}>Contact Us</Button>
-            </CardFooter>
-          </Card>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto w-full">
+          {pricingTiers.map((tier, index) => (
+            <Card key={tier.name} className="p-2 rounded-xl h-fit relative">
+              {tier.isPopular && (
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-500 text-white px-3 py-1 rounded-full text-sm">
+                  Popular
+                </div>
+              )}
+              <CardHeader className="pb-6">
+                <CardTitle className="text-2xl font-medium">{tier.name}</CardTitle>
+                <div className="flex items-baseline gap-1 mt-4">
+                  <span className="text-4xl font-semibold">
+                    {typeof tier.price === 'number' ? `$${tier.price}` : tier.price}
+                  </span>
+                </div>
+              </CardHeader>
+              <Separator className="h-[2px] px-4"/>
+              <CardContent className='pt-6'>
+                <p className="text-lg mb-4 font-medium">{tier.description}</p>
+                <ul className="space-y-2 text-[--clr-grey-base]">
+                  {tier.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-center gap-2">
+                      <span className="bg-gray-100 rounded-full p-1 text-[--clr-grey-dark]">
+                        <Check className="w-3 h-3"/>
+                      </span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+              <CardFooter className="pt-8">
+                <Button 
+                  path={cal30MinLink} 
+                  className={`w-full ${tier.isPopular ? 'bg-blue-500 hover:bg-blue-600' : ''}`}
+                >
+                  {tier.buttonText}
+                </Button>
+              </CardFooter>
+            </Card>
+          ))}
         </div>
       </section>
 
-      <section id="faq" className="min-h-screen flex flex-col gap-12 py-32 px-5 md:px-20 lg:px-32 bg-[--clr-base]">
-        <div className="flex flex-col gap-6 text-center max-w-4xl mx-auto">
+      <section id="faq" className="w-full flex flex-col gap-12 py-12 px-5 md:px-20 lg:px-32 bg-[--clr-base]">
+        <div className="flex flex-col gap-6 text-center mx-auto">
           <h2>Frequently Asked Questions</h2>
-          <p className="text-xl md:text-2xl text-[--clr-grey-base]">Everything you need to know about our services</p>
+          <p className="text-xl">Everything you need to know about our services</p>
         </div>
 
-        <Accordion type="single" collapsible className="max-w-3xl mx-auto w-full">
+        <Accordion type="single" collapsible className="mx-auto w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger className="text-lg font-medium">How long does it take to build a website?</AccordionTrigger>
             <AccordionContent className="text-[--clr-grey-base] text-lg">
@@ -243,16 +249,17 @@ export default function Home() {
         </Accordion>
       </section>
 
-      <section className="min-h-[70vh] flex flex-col gap-10 items-center justify-center py-32 px-5 md:px-20 lg:px-32">
+      <section className="z-[999] flex flex-col gap-10 items-center justify-center py-12 px-5 md:px-20 lg:px-32">
         <div className="flex flex-col gap-6 items-center text-center max-w-4xl">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold">Ready to transform your online presence?</h2>
-          <p className="text-xl md:text-2xl text-[--clr-grey-base]">Book a free consultation today and let&apos;s discuss your project.</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold">Ready to transform your online presence? <Rocket className="inline-block align-middle w-8 h-8"/></h2>
+          <p className="text-xl md:text-2xl">Book a free consultation today and let&apos;s discuss your project.</p>
         </div>
         <Button path={cal30MinLink} className="text-lg">
           Schedule Your Call
           <Calendar className="ml-2"/>
         </Button>
       </section>
+
     </main>
   );
 }

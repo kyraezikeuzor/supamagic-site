@@ -6,7 +6,12 @@ import Navbar from '@/components/ui/navbar'
 import Footer from '@/components/ui/footer'
 import Toolbar from "@/components/ui/toolbar";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  display: 'swap',
+  fallback: ['system-ui', 'arial'],
+});
 
 export const metadata: Metadata = {
   title: "Supamagic | Fast, Magic Landing Pages",
@@ -29,7 +34,7 @@ export default function RootLayout({
         <meta name="twitter:image" content="https://spricalabs.vercel.app/sprica-labs-meta-img-thin.png"/>
       </head>
       <body className={inter.className}>
-        <main className="flex flex-col justify-center px-6 mx-auto 2xl:max-w-[1400px]">
+        <main className="flex flex-col justify-center mx-auto 2xl:max-w-[1400px] w-full">
           {children}
           <Toolbar/>
         </main>

@@ -1,7 +1,7 @@
 .text-container {
     z-index: 99;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     display: flex;
     position: absolute;
     top: 0;

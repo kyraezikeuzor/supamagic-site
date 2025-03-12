@@ -1,63 +1,52 @@
 'use client'
-import React, {useEffect, useRef } from 'react'
+import React, {useEffect, useRef, useState } from 'react'
 import styles from './animation.module.css'
+import { 
+    generateKeyframes, 
+    gradientBgStyle, 
+    gradientsContainerStyle, 
+    g1Style, g2Style, g3Style, g4Style, g5Style, 
+    interactiveStyle, 
+    textContainerStyle } 
+from './animation.styles'
+type CSSProperties = React.CSSProperties;
 
 export default function AnimationMorphGradient({children}:{children:React.ReactNode}) {
-    const goo = useRef<HTMLDivElement>(null);
-    const interactive = useRef<HTMLDivElement>(null)
+    const screenRef = useRef<HTMLDivElement>(null);
+    const [screenHeight, setScreenHeight] = useState(0);
+
 
     useEffect(()=>{
-        document.addEventListener('DOMContentLoaded', () => {
-            const interBubble = interactive!;
-            let curX = 0;
-            let curY = 0;
-            let tgX = 0;
-            let tgY = 0;
+        if(screenRef.current){
+            setScreenHeight(screenRef.current?.offsetHeight);
+            console.log(screenHeight);
+        }
+
+        const styleSheet = document.createElement("style");
+        styleSheet.innerText = generateKeyframes();
+        document.head.appendChild(styleSheet);
         
-            function move() {
-                curX += (tgX - curX) / 20;
-                curY += (tgY - curY) / 20;
-                if (interBubble.current) {
-                    interBubble.current.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
-                }
-                requestAnimationFrame(() => {
-                    move();
-                });
-            }
-        
-            window.addEventListener('mousemove', (event) => {
-                tgX = event.clientX;
-                tgY = event.clientY;
-            });
-        
-            move();
-        });
-    },[])
+        return () => {
+          document.head.removeChild(styleSheet);
+        };
+      
+    })
     
     return (
-    <section>
-        <div className={styles["text-container"]}>
-            {children}
-        </div>
-        <div className={styles["gradient-bg"]}>
-            <svg className={styles.svg} xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                <filter id="goo" >
-                    <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
-                    <feBlend in="SourceGraphic" in2="goo" />
-                </filter>
-                </defs>
-            </svg>
-            <div className={styles["gradients-container"]}>
-                <div className={styles.g1}></div>
-                <div className={styles.g2}></div>
-                <div className={styles.g3}></div>
-                <div className={styles.g4}></div>
-                <div className={styles.g5}></div>
-                <div ref={interactive} className={styles.interactive}></div>
+    <div className='relative w-screen h-[200vh]'>
+        <div style={gradientBgStyle('200vh') as CSSProperties}>
+            <div style={gradientsContainerStyle('200vh') as CSSProperties}>
+                <div style={g1Style('50%') as CSSProperties}></div>
+                <div style={g2Style('50%') as CSSProperties}></div>
+                <div style={g3Style('50%') as CSSProperties}></div>
+                <div style={g4Style('50%') as CSSProperties}></div>
+                <div style={g5Style('50%') as CSSProperties}></div>
+                <div style={interactiveStyle('50%') as CSSProperties}></div>
+            </div>
+            <div style={textContainerStyle('200vh') as CSSProperties}>
+                {children}
             </div>
         </div>
-    </section>
+    </div>
     )
 }
